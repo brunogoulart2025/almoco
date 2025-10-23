@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Controle de Almoço</title>
+<link rel="stylesheet" href="style.css">
+<!-- SheetJS for Excel export -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Controle de Almoço</h1>
+
+    <div class="controls">
+      <label for="funcionario">Funcionário</label>
+      <select id="funcionario"><option value="">-- selecione --</option></select>
+      <div class="buttons">
+        <button id="btnSaida">Registrar Saída</button>
+        <button id="btnVolta">Registrar Volta</button>
+        <button id="btnExport">Baixar Excel</button>
+        <button id="btnLimpar" class="danger">Limpar Registros</button>
+      </div>
+    </div>
+
+    <div class="filtro">
+      <label for="filtroData">Pesquisar por data (YYYY-MM-DD):</label>
+      <input id="filtroData" placeholder="ex: 2025-10-23" />
+      <button id="btnFiltrar">Filtrar</button>
+      <button id="btnLimparFiltro">Limpar filtro</button>
+    </div>
+
+    <table id="tabela">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Data</th>
+          <th>Saída</th>
+          <th>Volta</th>
+          <th>Duração</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <p class="nota">Registros salvos localmente no navegador (localStorage).</p>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
